@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class='tall' lang='en'>
+	<head>
+		<title>Lightning Round!</title>		
+		<link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css' />
+		<link rel='stylesheet' type='text/css' href='css/style.css' />		
+		<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>		
+
+		<script type='text/javascript' src='js/jquery-1.7.2.min.js'></script>
+		<script type='text/javascript' src='js/jquery.color.js'></script>
+		<script type='text/javascript' src='js/jquery.editable-1.3.3.min.js'></script>
+		<script type='text/javascript' src='js/jquery-textfill-0.1.js'></script>
+		<script type='text/javascript' src='js/lround.js'></script>
+				<script type='text/javascript' src='bootstrap/js/bootstrap.min.js'></script>
+		
+	</head>
+	
+	<body class='tall'>
+		<div class="container-fluid tall">
+			<div class='row-fluid tall'>
+				
+				<div class='span9 timer tall'>
+					<h1 id='current_topic'>READY PLAYER ONE</h1>
+					<span id='timer' ></span>
+					<h3 id='next_topic'>Press SPACEBAR to start</h3>
+				</div>
+				
+				<div class='span3 topics'>
+					<ul class='topic-list'>
+						<li class="editable"><span>Topic 1</span><a class='remove'><i class='icon-white icon-remove'></i></a></li>
+						<li class="editable"><span>Topic 2</span><a class='remove'><i class='icon-white icon-remove'></i></a></li>
+						<li class="editable"><span>Topic 3</span><a class='remove'><i class='icon-white icon-remove'></i></a></li>
+						<li class="editable"><span>Topic 4</span><a class='remove'><i class='icon-white icon-remove'></i></a></li>
+						<li class="editable"><span>Topic 5</span><a class='remove'><i class='icon-white icon-remove'></i></a></li>
+					</ul>
+
+					<div class='nav'>
+						<a class='btn btn-small btn-inverse add-btn'><i class='icon-white icon-plus'></i></a>
+						<select class='interval'>
+							<option value="10">10 Seconds</option>
+							<option value="30">30 Seconds</option>
+							<option value="60">60 Seconds</option>
+							<option value="90" selected='selected'>90 Seconds</option>
+							<option value="120">120 Seconds</option>
+						<select>
+					</div>
+				</div>
+				
+			</div>
+		</div>		
+	</body>
+	
+</html>
