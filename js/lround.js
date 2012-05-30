@@ -15,6 +15,10 @@
 				beep_high = new Audio("wav/beep-7.wav");
 				beep_low = new Audio("wav/beep-8.wav");
 				fail_horn = new Audio("wav/fail_horn.wav");
+				
+				beep_high.load();
+				beep_low.load();
+				fail_horn.load();
 		
 			$(document).keyup(function(evt) {
 				if (evt.keyCode == 32 && !started && can_start) {
@@ -101,11 +105,20 @@
 		}
 				
 		function UpdateTimer(){
+		
 			if (TotalSeconds < 0) {
 				TotalSeconds = interval_ms/1000;
-				nextActive();
+				
+				if ( !$('input#continue').is(':checked') ) {
+					nextActive();
+				} else {
+					started = false;
+					$(Timer).html('paused');
+					$('.timer').textfill( { maxFontPixels: 1000, innerTag: 'span#timer'  } )
+					return;		
+				}
 			}
-		
+			
 			$(Timer).html( (TotalSeconds < 10 ? '0' : '') + TotalSeconds );
 		}
 		
@@ -125,5 +138,5 @@
 			UpdateTimer();
 			
 			if (TotalSeconds == 2 || TotalSeconds == 1 || TotalSeconds == 0)  beep_high.play();			
-			if (active != total_topics && started){ window.setTimeout("Tick()", 1000); }
+			if (active != total_topics && started ){ window.setTimeout("Tick()", 1000); }
 		}
